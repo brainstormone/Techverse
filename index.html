@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechVerse - Future of Technology</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f8fafc;
+    overflow-x:hidden;
+}
+
+/* Animated Background */
+body::before{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#6d5dfc;
+    border-radius:50%;
+    filter:blur(150px);
+    top:-200px;
+    right:-200px;
+    opacity:.18;
+    z-index:-1;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:400px;
+    height:400px;
+    background:#00d4ff;
+    border-radius:50%;
+    filter:blur(150px);
+    bottom:-150px;
+    left:-150px;
+    opacity:.18;
+    z-index:-1;
+}
+
+/* Navbar */
+
+.navbar{
+    background:rgba(255,255,255,.75)!important;
+    backdrop-filter:blur(15px);
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+.navbar-brand{
+font-weight:800;
+font-size:1.8rem;
+}
+
+.nav-link{
+position:relative;
+font-weight:600;
+}
+
+.nav-link::after{
+content:'';
+position:absolute;
+left:0;
+bottom:0;
+width:0;
+height:3px;
+background:#6d5dfc;
+transition:.3s;
+}
+
+.nav-link:hover::after{
+width:100%;
+}
+
+@media(max-width:991px){
+
+.navbar-collapse{
+background:white;
+padding:20px;
+border-radius:20px;
+margin-top:15px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.nav-link{
+padding:12px 0;
+}
+
+}
+
+@media(max-width:576px){
+
+.navbar-brand{
+font-size:1.3rem;
+}
+
+.hero h1{
+font-size:2.8rem;
+}
+
+    font-weight:800;
+    font-size:2rem;
+    color:#6d5dfc !important;
+}
+
+.nav-link{
+    font-weight:500;
+    margin-left:15px;
+}
+
+/* Hero */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+    linear-gradient(
+    135deg,
+    #6d5dfc,
+    #8b5cf6,
+    #00d4ff
+    );
+    color:white;
+    clip-path:ellipse(140% 100% at 50% 0%);
+}
+
+.hero h1{
+    font-size:4.5rem;
+    font-weight:800;
+    line-height:1.1;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-top:20px;
+    opacity:.95;
+}
+
+.hero-btn{
+    margin-top:30px;
+    background:white;
+    color:#6d5dfc;
+    border:none;
+    padding:15px 40px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.4s;
+}
+
+.hero-btn:hover{
+    transform:translateY(-5px);
+}
+
+/* Floating Tech Icons */
+
+.tech-icons{
+    margin-top:40px;
+}
+
+.tech-icons i{
+    font-size:2rem;
+    margin:0 15px;
+    animation:float 3s ease-in-out infinite;
+}
+
+.tech-icons i:nth-child(2){
+    animation-delay:.5s;
+}
+
+.tech-icons i:nth-child(3){
+    animation-delay:1s;
+}
+
+.tech-icons i:nth-child(4){
+    animation-delay:1.5s;
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+/* Section */
+
+.section-title{
+    text-align:center;
+    font-size:2.8rem;
+    font-weight:800;
+    color:#111827;
+    margin-bottom:60px;
+}
+
+/* Product Cards */
+
+.product-card{
+    border:none;
+    border-radius:25px;
+    overflow:hidden;
+    background:rgba(255,255,255,.8);
+    backdrop-filter:blur(15px);
+    transition:.4s;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.product-card:hover{
+    transform:translateY(-12px) scale(1.03);
+}
+
+.product-img{
+    height:230px;
+    width:100%;
+    object-fit:cover;
+}
+
+.badge-tech{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:#6d5dfc;
+    color:white;
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:.8rem;
+}
+
+.price{
+    font-size:1.5rem;
+    font-weight:700;
+    color:#6d5dfc;
+}
+
+.rating{
+    color:#fbbf24;
+}
+
+.buy-btn{
+    width:100%;
+    border:none;
+    border-radius:50px;
+    padding:12px;
+    background:
+    linear-gradient(
+    135deg,
+    #6d5dfc,
+    #8b5cf6
+    );
+    color:white;
+    font-weight:600;
+    transition:.4s;
+}
+
+.buy-btn:hover{
+    transform:scale(1.05);
+}
+
+/* Map */
+
+.location-card{
+    border:none;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.1);
+}
+
+.location-title{
+    background:
+    linear-gradient(
+    135deg,
+    #6d5dfc,
+    #00d4ff
+    );
+    color:white;
+    padding:20px;
+    text-align:center;
+    font-weight:600;
+}
+
+/* Footer */
+
+footer{
+    margin-top:80px;
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+footer h3{
+    font-weight:800;
+}
+
+footer i{
+    margin:15px;
+    font-size:1.6rem;
+    transition:.3s;
+}
+
+footer i:hover{
+    color:#00d4ff;
+    transform:translateY(-5px);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg sticky-top">
+<div class="container">
+
+<a class="navbar-brand" href="#">
+<i class="fa-solid fa-microchip"></i> TechVerse
+</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="#Home">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#Products">Products</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#Location">Location</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#Contact">Contact</a>
+</li>
+
+</ul>
+</ul>
+</div>
+
+</div>
+</nav>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="container">
+
+<h1>
+Future Ready<br>
+Tech Products
+</h1>
+
+<p>
+Discover innovative gadgets designed for work, gaming and everyday life.
+</p>
+
+<button class="hero-btn">
+Explore Collection
+</button>
+
+<div class="tech-icons">
+<i class="fas fa-laptop"></i>
+<i class="fas fa-mobile-screen"></i>
+<i class="fas fa-headphones"></i>
+<i class="fas fa-clock"></i>
+</div>
+
+</div>
+
+</section>
+
+<!-- Products -->
+
+<section class="container py-5">
+
+<h2 class="section-title">
+Featured Products
+</h2>
+
+<div class="row g-4">
+
+<div class="col-lg-3 col-md-6">
+<div class="card product-card position-relative">
+
+<span class="badge-tech">HOT</span>
+
+<img src="https://images.pexels.com/photos/18105/pexels-photo.jpg" class="product-img">
+
+<div class="card-body text-center">
+<h5>Laptop Pro</h5>
+<p>Powerful performance for creators and developers.</p>
+<div class="rating">★★★★★</div>
+<p class="price">₹79,999</p>
+<button class="buy-btn">Buy Now</button>
+</div>
+
+</div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+<div class="card product-card position-relative">
+
+<span class="badge-tech">NEW</span>
+
+<img src="https://cdn.pixabay.com/photo/2023/11/13/17/59/smartphone-8386064_1280.jpg" class="product-img">
+
+<div class="card-body text-center">
+<h5>Smartphone X</h5>
+<p>AI camera and ultra-fast performance.</p>
+<div class="rating">★★★★★</div>
+<p class="price">₹49,999</p>
+<button class="buy-btn">Buy Now</button>
+</div>
+
+</div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+<div class="card product-card position-relative">
+
+<span class="badge-tech">BEST</span>
+
+<img src="https://images.pexels.com/photos/3394664/pexels-photo-3394664.jpeg" class="product-img">
+
+<div class="card-body text-center">
+<h5>Headphones</h5>
+<p>Immersive sound with active noise cancellation.</p>
+<div class="rating">★★★★★</div>
+<p class="price">₹5,999</p>
+<button class="buy-btn">Buy Now</button>
+</div>
+
+</div>
+</div>
+<!-- Product 5 -->
+<div class="col-xl-3 col-lg-4 col-md-6">
+<div class="card product-card position-relative">
+<span class="badge-tech">POPULAR</span>
+
+<img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=965&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img">
+
+<div class="card-body text-center">
+<h5>Gaming Keyboard</h5>
+<p>RGB mechanical keyboard with responsive switches.</p>
+<div class="rating">★★★★★</div>
+<p class="price">₹3,999</p>
+<button class="buy-btn">Buy Now</button>
+</div>
+</div>
+</div>
+
+<!-- Product 6 -->
+<div class="col-xl-3 col-lg-4 col-md-6">
+<div class="card product-card position-relative">
+<span class="badge-tech">NEW</span>
+
+<img src="https://images.unsplash.com/photo-1625545013865-80da35181abf?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img">
+
+<div class="card-body text-center">
+<h5>DSLR Camera</h5>
+<p>Capture stunning photos and cinematic videos.</p>
+<div class="rating">★★★★★</div>
+<p class="price">₹64,999</p>
+<button class="buy-btn">Buy Now</button>
+</div>
+</div>
+</div>
+
+<!-- Product 7 -->
+<div class="col-xl-3 col-lg-4 col-md-6">
+<div class="card product-card position-relative">
+<span class="badge-tech">TRENDING</span>
+
+<img src="https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img">
+
+<div class="card-body text-center">
+<h5>Wireless Earbuds</h5>
+<p>Crystal clear sound with long battery backup.</p>
+<div class="rating">★★★★★</div>
+<p class="price">₹2,499</p>
+<button class="buy-btn">Buy Now</button>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="card product-card position-relative">
+
+<span class="badge-tech">TRENDING</span>
+
+<img src="https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg" class="product-img">
+
+<div class="card-body text-center">
+<h5>Smart Watch</h5>
+<p>Track health, fitness and daily activities.</p>
+<div class="rating">★★★★★</div>
+<p class="price">₹8,999</p>
+<button class="buy-btn">Buy Now</button>
+</div>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- Location -->
+
+<section class="container my-5">
+
+<div class="location-card">
+
+<div class="location-title">
+<i class="fas fa-location-dot"></i> Visit Our Store
+</div>
+
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14007.424844825478!2d77.42713871892286!3d28.63407128386208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cee22c60837b7%3A0x7c35343eceb7bde0!2sABES%20Engineering%20College!5e0!3m2!1sen!2sin!4v1773310186438!5m2!1sen!2sin"
+width="100%"
+height="450"
+style="border:0;"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+
+<h3>TechVerse</h3>
+
+<p>Innovating the Future, One Device at a Time.</p>
+
+<div>
+<i class="fab fa-github"></i>
+<i class="fab fa-twitter"></i>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-linkedin"></i>
+</div>
+
+<p class="mt-3">
+© 2026 TechVerse. All Rights Reserved.
+</p>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+```
